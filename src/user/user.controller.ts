@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Body,
   Controller,
@@ -15,7 +16,7 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
+import { diskStorage, Multer } from 'multer';
 import * as path from 'path';
 import { SignupDto } from './dtos/signup.dto';
 import { Users } from './Schemas/user.schema';
@@ -48,7 +49,7 @@ export class UserController {
     }),
   )
   async uploadedFile(
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file: Multer.File,
     @Req() request: any,
   ) {
     await this.usersService.insertImage(request.user.email, file.filename);

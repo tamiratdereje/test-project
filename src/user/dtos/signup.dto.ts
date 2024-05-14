@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   IsEmail,
   IsNotEmpty,
   IsString,
   Length,
-//   Matches,
+  Matches,
 } from 'class-validator';
 
 export class SignupDto {
